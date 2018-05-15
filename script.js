@@ -1,18 +1,33 @@
+// TUTORIAL 11 ↓ //
+
+// Clients & Servers //
+// Protocols: A set of communications rules, that two sides agree to use when communicating 
+// Sockets: A channel through which information can be sent between a client and a server (via IPs)
+// Packets: A layer 3 protocol data unit, or a piece of data associated with the network layer
+// Ports: A program running on a computer can listen for requests sent to a particular port number
+
+// TCP: Transmission Control Protocol
+// FTP: File Transfer Protocol
+// HTTP: Hypertext Transfer Protocol
+
+
+
+
 // TUTORIAL 10 ↓ //
 
 // Creating & Removing Directories //
 
-var fs = require("fs");
+// var fs = require("fs");
 
-// fs.mkdir('Stuff', function(){ // uses mkdir to make new directory called Stuff
-//     fs.readFile('README.md', 'utf8', function(err, data){
-//         fs.writeFileSync('./Stuff/WRITEME.md', data);
-//     });
-// }); 
+// // fs.mkdir('Stuff', function(){ // uses mkdir to make new directory called Stuff
+// //     fs.readFile('README.md', 'utf8', function(err, data){
+// //         fs.writeFileSync('./Stuff/WRITEME.md', data);
+// //     });
+// // }); 
 
-fs.unlink('./Stuff/WRITEME.md', function(){
-    fs.rmdir('Stuff'); // removes directory
-});
+// fs.unlink('./Stuff/WRITEME.md', function(){
+//     fs.rmdir('Stuff'); // removes directory
+// });
 
 
 // TUTORIAL 9 ↓ //
