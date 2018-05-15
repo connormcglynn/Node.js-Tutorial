@@ -1,12 +1,20 @@
+// TUTORIAL 6 ↓ //
+
+// Modules 
+
+var counter = require('./count');
+
+console.log(counter(['Connor', 'Beardsley', 'McGlynn']));
+
 // TUTORIAL 5 ↓ //
 
 // Function Expressions
 
-var sayBye = function(){
-    console.log("bye");
-};
+// var sayBye = function(){
+//     console.log("bye");
+// };
 
-sayBye();
+// sayBye();
 
 // TUTORIALS 1-4 ↓ //
 
