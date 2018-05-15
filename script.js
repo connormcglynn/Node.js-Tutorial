@@ -1,16 +1,30 @@
+// TUTORIAL 10 ↓ //
+
+// Creating & Removing Directories //
+
+var fs = require("fs");
+
+fs.mkdir('Stuff', function(){ // uses mkdir to make new directory called Stuff
+    fs.readFile('README.md', 'utf8', function(err, data){
+        fs.writeFileSync('./Stuff/WRITEME.md', data);
+    });
+}); 
+
+//fs.rmdir('Stuff'); // removes directory
+
 // TUTORIAL 9 ↓ //
 
-// Reading & Writing Files
+// Reading & Writing Files //
 
-var fs = require('fs');
+// var fs = require('fs');
 
-fs.readFile('README.md', 'utf8', function(err, data){
-    fs.writeFileSync('WRITEME.md', data);
-});
+// fs.readFile('README.md', 'utf8', function(err, data){
+//     fs.writeFileSync('WRITEME.md', data);
+// });
 
 // TUTORIAL 8 ↓ //
 
-// The Node Event Emitter Module
+// The Node Event Emitter Module //
 
 // var events = require('events');
 // var util = require('util');
