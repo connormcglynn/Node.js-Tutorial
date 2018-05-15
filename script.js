@@ -1,10 +1,20 @@
+// TUTORIAL 7 ↓ //
+
+// Module patterns
+
+var stuff = require('./stuff');
+
+console.log(stuff.counter(['Connor', 'Beardsley', 'McGlynn']));
+console.log(stuff.adder(5, 6));
+console.log(stuff.adder(stuff.pi, 5));
+
 // TUTORIAL 6 ↓ //
 
-// Modules 
+// Modules & require()
 
-var counter = require('./count');
+// var counter = require('./count');
 
-console.log(counter(['Connor', 'Beardsley', 'McGlynn']));
+// console.log(counter(['Connor', 'Beardsley', 'McGlynn']));
 
 // TUTORIAL 5 ↓ //
 
