@@ -1,16 +1,44 @@
+// TUTORIAL 8 ↓ //
+
+// The Node Event Emitter Module
+
+var events = require('events');
+var util = require('util');
+
+var Person = function(name){
+    this.name = name;
+};
+
+util.inherits(Person, events.EventEmitter);
+
+var james = new Person ('james');
+var mary = new Person ('mary');
+var ryan = new Person ('ryan');
+var people = [james, mary, ryan];
+
+people.forEach(function(person){
+   person.on('speak', function(mssg){
+       console.log(person.name + ' said: ' + mssg);
+   }); 
+});
+
+james.emit('speak', 'Hey, dudes!');
+ryan.emit('speak', "What's up homie?");
+mary.emit('speak', 'Watch your microaggressions, boys...');
+
 // TUTORIAL 7 ↓ //
 
-// Module patterns
+// Module patterns //
 
-var stuff = require('./stuff');
+// var stuff = require('./stuff');
 
-console.log(stuff.counter(['Connor', 'Beardsley', 'McGlynn']));
-console.log(stuff.adder(5, 6));
-console.log(stuff.adder(stuff.pi, 5));
+// console.log(stuff.counter(['Connor', 'Beardsley', 'McGlynn']));
+// console.log(stuff.adder(5, 6));
+// console.log(stuff.adder(stuff.pi, 5));
 
 // TUTORIAL 6 ↓ //
 
-// Modules & require()
+// Modules & require() //
 
 // var counter = require('./count');
 
@@ -18,7 +46,7 @@ console.log(stuff.adder(stuff.pi, 5));
 
 // TUTORIAL 5 ↓ //
 
-// Function Expressions
+// Function Expressions //
 
 // var sayBye = function(){
 //     console.log("bye");
@@ -28,11 +56,11 @@ console.log(stuff.adder(stuff.pi, 5));
 
 // TUTORIALS 1-4 ↓ //
 
-// Directory name and File name
+// Directory name and File name //
 
 // console.log(__dirname + " & " + __filename);
 
-// 2 second timer
+// 2 second timer //
 
 // var time = 0;
 
