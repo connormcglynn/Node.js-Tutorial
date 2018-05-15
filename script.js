@@ -1,30 +1,40 @@
+// TUTORIAL 9 ↓ //
+
+// Reading & Writing Files
+
+var fs = require('fs');
+
+fs.readFile('README.md', 'utf8', function(err, data){
+    fs.writeFileSync('WRITEME.md', data);
+});
+
 // TUTORIAL 8 ↓ //
 
 // The Node Event Emitter Module
 
-var events = require('events');
-var util = require('util');
+// var events = require('events');
+// var util = require('util');
 
-var Person = function(name){
-    this.name = name;
-};
+// var Person = function(name){
+//     this.name = name;
+// };
 
-util.inherits(Person, events.EventEmitter);
+// util.inherits(Person, events.EventEmitter);
 
-var james = new Person ('james');
-var mary = new Person ('mary');
-var ryan = new Person ('ryan');
-var people = [james, mary, ryan];
+// var james = new Person ('james');
+// var mary = new Person ('mary');
+// var ryan = new Person ('ryan');
+// var people = [james, mary, ryan];
 
-people.forEach(function(person){
-   person.on('speak', function(mssg){
-       console.log(person.name + ' said: ' + mssg);
-   }); 
-});
+// people.forEach(function(person){
+//   person.on('speak', function(mssg){
+//       console.log(person.name + ' said: ' + mssg);
+//   }); 
+// });
 
-james.emit('speak', 'Hey, dudes!');
-ryan.emit('speak', "What's up homie?");
-mary.emit('speak', 'Watch your microaggressions, boys...');
+// james.emit('speak', 'Hey, dudes!');
+// ryan.emit('speak', "What's up homie?");
+// mary.emit('speak', 'Watch your microaggressions, boys...');
 
 // TUTORIAL 7 ↓ //
 
