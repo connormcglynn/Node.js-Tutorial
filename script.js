@@ -4,13 +4,16 @@
 
 var fs = require("fs");
 
-fs.mkdir('Stuff', function(){ // uses mkdir to make new directory called Stuff
-    fs.readFile('README.md', 'utf8', function(err, data){
-        fs.writeFileSync('./Stuff/WRITEME.md', data);
-    });
-}); 
+// fs.mkdir('Stuff', function(){ // uses mkdir to make new directory called Stuff
+//     fs.readFile('README.md', 'utf8', function(err, data){
+//         fs.writeFileSync('./Stuff/WRITEME.md', data);
+//     });
+// }); 
 
-//fs.rmdir('Stuff'); // removes directory
+fs.unlink('./Stuff/WRITEME.md', function(){
+    fs.rmdir('Stuff'); // removes directory
+});
+
 
 // TUTORIAL 9 ↓ //
 
