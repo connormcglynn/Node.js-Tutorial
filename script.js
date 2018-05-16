@@ -1,17 +1,41 @@
+// TUTORIAL 13 ↓ //
+
+// Streams & Buffers //
+
+// Buffer: A temporary storage spot for a chunk of data that is being transferred from one place to another
+    // The buffer is filled with data, then passed along
+    // Transfers small chunks of data at a time
+    
+// Stream: A stream represents a sequence of objects (usually bytes, but not necessarily so), which can be accessed in sequential order. Typical operations on a stream:
+    // Read one byte. Next time you read, you'll get the next byte, and so on
+    // Read several bytes from the stream into an array
+    // Seek (move your current position in the stream, so that next time you read you get bytes from the new position)
+    // Write one byte
+    // Write several bytes from an array into the stream
+    // Skip bytes from the stream (this is like read, but you ignore the data. Or if you prefer it's like seek but can only go forwards)
+    // Push back bytes into an input stream (this is like "undo" for read - you shove a few bytes back up the stream, so that next time you read that's what you'll see. 
+        // It's occasionally useful for parsers, as is:
+            // Peek (look at bytes without reading them, so that they're still there in the stream to be read later)
+            
+// Streams in Node.js
+    // Can create streams in Node.js to transfer data
+    // Used to increase application performance 
+
+
 // TUTORIAL 12 ↓ //
 
 // Creating a server //
 
-var http = require("http");
+// var http = require("http");
 
-var server = http.createServer(function(req, res){
-    console.log('Request was made: ' + req.url)
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hey ninjas');
-});
+// var server = http.createServer(function(req, res){
+//     console.log('Request was made: ' + req.url)
+//     res.writeHead(200, {'Content-Type': 'text/plain'});
+//     res.end('Hey ninjas');
+// });
 
-server.listen(3000, '127.0.0.1');
-console.log('Hey, now listening to port 3000');
+// server.listen(3000, '127.0.0.1');
+// console.log('Hey, now listening to port 3000');
 
 // TUTORIAL 11 ↓ //
 
