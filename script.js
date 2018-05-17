@@ -1,17 +1,32 @@
+// TUTORIAL 15 ↓ //
+
+// Writable Streams //
+   
+var http = require("http");
+var fs = require("fs");
+
+var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
+var myWriteStream = fs.createWriteStream(__dirname + '/writeMe.txt');
+
+myReadStream.on('data', function(chunk){
+   console.log('new chunk received');
+   myWriteStream.write(chunk, 'utf8');
+});
+
 // TUTORIAL 14 ↓ //
 
 // Readable Streams //
     // Duplex: can write and read to a stream
     
-var http = require("http");
-var fs = require("fs");
+// var http = require("http");
+// var fs = require("fs");
 
-var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
+// var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
 
-myReadStream.on('data', function(chunk){
-   console.log('new chunk received');
-   console.log(chunk);
-});
+// myReadStream.on('data', function(chunk){
+//   console.log('new chunk received');
+//   console.log(chunk);
+// });
 
 // console.log(myReadStream);
 
