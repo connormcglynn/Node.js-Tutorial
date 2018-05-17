@@ -1,6 +1,11 @@
-// TUTORIAL 20 ↓ //
+// TUTORIAL 20 & 21 & 22 ↓ //
 
-// Node Package Manager (npm) //
+// Node Package Manager (npm) / Package.JSON / Nodemon //
+// Installed express
+// Installed nodemon
+
+var http = require("http");
+var fs = require("fs");
 
 var server = http.createServer(function(req, res){
     console.log('Request was made: ' + req.url);
