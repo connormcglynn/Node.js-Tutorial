@@ -1,17 +1,34 @@
+// TUTORIAL 16 ↓ //
+
+// Pipes //
+
+var http = require("http");
+var fs = require("fs");
+
+var server = http.createServer(function(req, res){
+    console.log('Request was made: ' + req.url)
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
+    myReadStream.pipe(res);
+});
+
+server.listen(3000, '127.0.0.1');
+console.log('Hey, now listening to port 3000');
+
 // TUTORIAL 15 ↓ //
 
 // Writable Streams //
    
-var http = require("http");
-var fs = require("fs");
+// var http = require("http");
+// var fs = require("fs");
 
-var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
-var myWriteStream = fs.createWriteStream(__dirname + '/writeMe.txt');
+// var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
+// var myWriteStream = fs.createWriteStream(__dirname + '/writeMe.txt');
 
-myReadStream.on('data', function(chunk){
-   console.log('new chunk received');
-   myWriteStream.write(chunk, 'utf8');
-});
+// myReadStream.on('data', function(chunk){
+//   console.log('new chunk received');
+//   myWriteStream.write(chunk, 'utf8');
+// });
 
 // TUTORIAL 14 ↓ //
 
