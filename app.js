@@ -1,12 +1,6 @@
-// TUTORIAL 23 ↓ //
+// TUTORIAL 24 ↓ //
 
-// Introduction to Express
-    // Easy and flexible routing system
-    // Integrates with many templating engines
-    // Contains a middleware framework
-        // Middleware: acts as a bridge between a database/OS and applications, especially on a network.
-    // HTTP Methods: 
-        // GET, POST, DELETE, PUT
+// Route Parameters
 
 var express = require("express");
 
@@ -20,7 +14,35 @@ app.get('/contact', function(req, res){
     res.send('this is the contact page');
 });
 
+app.get('/profile/:id', function(req, res){
+    res.send('You requested to see a profile with the id of ' + req.params.id);
+})
+
 app.listen(3000);
+
+// TUTORIAL 23 ↓ //
+
+// Introduction to Express
+    // Easy and flexible routing system
+    // Integrates with many templating engines
+    // Contains a middleware framework
+        // Middleware: acts as a bridge between a database/OS and applications, especially on a network.
+    // HTTP Methods: 
+        // GET, POST, DELETE, PUT
+
+// var express = require("express");
+
+// var app = express();
+
+// app.get('/', function(req, res){
+//     res.send('this is the homepage');
+// });
+
+// app.get('/contact', function(req, res){
+//     res.send('this is the contact page');
+// });
+
+// app.listen(3000);
 
 
 
