@@ -1,39 +1,65 @@
+// TUTORIAL 23 ↓ //
+
+// Introduction to Express
+    // Easy and flexible routing system
+    // Integrates with many templating engines
+    // Contains a middleware framework
+        // Middleware: acts as a bridge between a database/OS and applications, especially on a network.
+    // HTTP Methods: 
+        // GET, POST, DELETE, PUT
+
+var express = require("express");
+
+var app = express();
+
+app.get('/', function(req, res){
+    res.send('this is the homepage');
+});
+
+app.get('/contact', function(req, res){
+    res.send('this is the contact page');
+});
+
+app.listen(3000);
+
+
+
 // TUTORIAL 20 & 21 & 22 ↓ //
 
 // Node Package Manager (npm) / Package.JSON / Nodemon //
 // Installed express
 // Installed nodemon
 
-var http = require("http");
-var fs = require("fs");
+// var http = require("http");
+// var fs = require("fs");
 
-var server = http.createServer(function(req, res){
-    console.log('Request was made: ' + req.url);
-    if (req.url === '/home' || req.url === '/') {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/index.html').pipe(res);
-    } else if (req.url === '/contact'){
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/contact.html').pipe(res);
-    } else if (req.url === '/api') {
-        var api = [{
-            name: 'Ryu',
-            age: 29
-        },
-            {
-            name: 'Yoshi',
-            age: 32
-            }];
-        res.writeHead(200, {'Content-Type': 'application/JSON'});
-        res.end(JSON.stringify(api));
-    } else {
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/404.html').pipe(res);
-    }
-});
+// var server = http.createServer(function(req, res){
+//     console.log('Request was made: ' + req.url);
+//     if (req.url === '/home' || req.url === '/') {
+//         res.writeHead(200, {'Content-Type': 'text/html'});
+//         fs.createReadStream(__dirname + '/index.html').pipe(res);
+//     } else if (req.url === '/contact'){
+//         res.writeHead(200, {'Content-Type': 'text/html'});
+//         fs.createReadStream(__dirname + '/contact.html').pipe(res);
+//     } else if (req.url === '/api') {
+//         var api = [{
+//             name: 'Ryu',
+//             age: 29
+//         },
+//             {
+//             name: 'Yoshi',
+//             age: 32
+//             }];
+//         res.writeHead(200, {'Content-Type': 'application/JSON'});
+//         res.end(JSON.stringify(api));
+//     } else {
+//         res.writeHead(404, {'Content-Type': 'text/html'});
+//         fs.createReadStream(__dirname + '/404.html').pipe(res);
+//     }
+// });
 
-server.listen(3000, '127.0.0.1');
-console.log('Hey, now listening to port 3000');
+// server.listen(3000, '127.0.0.1');
+// console.log('Hey, now listening to port 3000');
 
 // TUTORIAL 19 ↓ //
 
