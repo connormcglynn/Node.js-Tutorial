@@ -37,16 +37,9 @@
     </style>
     
 </head>
-<% include partials/nav.ejs %>
 <body>
-    <h1>Welcome to the profile of <%= person %></h1>
-    <p><strong>Age: </strong><%= data.age %></p>
-    <p><strong>Job: </strong><%= data.job %></p>
-    <h2>Hobbies</h2>
-    <ul>
-        <% data.hobbies.forEach(function(item){ %>
-            <p><li><%= item %></li></p>
-        <% }) %> 
-    </ul>
+    <% include partials/nav.ejs %>
+    <h1>Contact Us!</h1>
+    <p>Contact the coolest cats on the web right here...</p>
 </body>
 </html>

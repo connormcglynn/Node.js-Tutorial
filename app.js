@@ -1,6 +1,6 @@
-// TUTORIAL 24 & 25 & 26 ↓ //
+// TUTORIAL 24 & 25 & 26 & 27 ↓ //
 
-// Route Parameters / Templating Engines (Parts 1 & 2)
+// Route Parameters / Templating Engines (Parts 1 & 2) / Partial Templates
 
 var express = require("express");
 var app = express();
@@ -8,11 +8,11 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.render('index');
 });
 
 app.get('/contact', function(req, res){
-    res.sendFile(__dirname + '/contact.html');
+    res.render('contact');
 });
 
 app.get('/profile/:name', function(req, res){
