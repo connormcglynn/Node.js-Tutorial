@@ -7,7 +7,7 @@ var app = express();
 app.set('view engine', 'ejs');
 
 //static files
-app.use(express.static('/'));
+app.use(express.static('./'));
 
 //fire controllers
 todoController(app);
