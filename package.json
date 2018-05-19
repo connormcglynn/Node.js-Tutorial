@@ -1,5 +1,5 @@
 {
-  "name": "node-js-playlist",
+  "name": "js-playlist",
   "version": "1.0.0",
   "description": "a little test app",
   "main": "script.js",
@@ -16,5 +16,14 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "lodash.throttle": "^4.1.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connormcglynn/Node.js-Tutorial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/connormcglynn/Node.js-Tutorial/issues"
+  },
+  "homepage": "https://github.com/connormcglynn/Node.js-Tutorial#readme"
 }
