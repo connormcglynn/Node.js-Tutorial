@@ -1,3 +1,10 @@
+// TUTORIAL 28 //
+
+// Serving Static Files and Middleware
+    // Middleware runs between the request and the response
+
+// see modified code below
+
 // TUTORIAL 24 & 25 & 26 & 27 ↓ //
 
 // Route Parameters / Templating Engines (Parts 1 & 2) / Partial Templates
@@ -6,6 +13,7 @@ var express = require("express");
 var app = express();
 
 app.set('view engine', 'ejs');
+app.use('/assets', express.static('assets'));
 
 app.get('/', function(req, res){
     res.render('index');
