@@ -1,13 +1,13 @@
-// TUTORIAL 28 //
+// TUTORIAL 28 & 29 ↓ //
 
 // Serving Static Files and Middleware
     // Middleware runs between the request and the response
-
-// see modified code below
-
-// TUTORIAL 24 & 25 & 26 & 27 ↓ //
-
-// Route Parameters / Templating Engines (Parts 1 & 2) / Partial Templates
+// Query Strings
+    // Portion(s) of a URL where data is passed to a web application and/or back-end database
+    // example: mysite.com/blog/news?page=2
+        // where the second page is called from the database instead of a static heirarchical structure
+    // and: mysite.com/contact?person=ryu&dept=marketing
+        // request is 'parsed' and data is pulled
 
 var express = require("express");
 var app = express();
@@ -20,7 +20,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/contact', function(req, res){
-    res.render('contact');
+    res.render('contact', {qs: req.query});
 });
 
 app.get('/profile/:name', function(req, res){
@@ -29,6 +29,31 @@ app.get('/profile/:name', function(req, res){
 });
 
 app.listen(3000);
+
+// TUTORIAL 24 & 25 & 26 & 27 ↓ //
+
+// Route Parameters / Templating Engines (Parts 1 & 2) / Partial Templates
+
+// var express = require("express");
+// var app = express();
+
+// app.set('view engine', 'ejs');
+// app.use('/assets', express.static('assets'));
+
+// app.get('/', function(req, res){
+//     res.render('index');
+// });
+
+// app.get('/contact', function(req, res){
+//     res.render('contact');
+// });
+
+// app.get('/profile/:name', function(req, res){
+//     var data = {age: 29, job: 'ninja', hobbies: ['eating', 'fighting', 'fishing']};
+//     res.render('profile', {person: req.params.name, data: data});
+// });
+
+// app.listen(3000);
 
 // TUTORIAL 23 ↓ //
 
