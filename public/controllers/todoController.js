@@ -12,12 +12,6 @@ var todoSchema = new mongoose.Schema({
 //Create a todo model based on Schema
 var Todo = mongoose.model('Todo', todoSchema);
 
-// //test
-// var itemOne = Todo({item: 'buy flowers'}).save(function(err){
-//     if (err) throw err;
-//     console.log('item saved');
-// });
-
 //default todo items
 //var data = [{item: 'get milk'}, {item: 'walk dog'}, {item: 'kick some coding ass'}];
 var urlencodedParser = bodyParser.urlencoded({extended: false});
